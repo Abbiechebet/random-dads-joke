@@ -1,12 +1,9 @@
 const axios = require("axios");
+const { apiKey } = require("../apikey/apikey");
 
 const getJoke = (req, res) => {
   axios
-    .get("https://dad-jokes.p.rapidapi.com/random/joke", {
-      headers: {
-        "X-RapidAPI-Key": "eb6a904ab2msh9709a2af37ee006p129c5bjsn92b4c9cadba0",
-      },
-    })
+    .get("https://dad-jokes.p.rapidapi.com/random/joke", apiKey)
     .then((response) => {
       res.json(response.data.body[0]);
     })
