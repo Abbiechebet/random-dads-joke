@@ -4,4 +4,4 @@ const apiKey = {
     },
   }
 
-  module.exports = {apiKey}
+  export default {apiKey}

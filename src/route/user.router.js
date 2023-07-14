@@ -1,9 +1,9 @@
-const express = require("express");
+import { Router } from "express";
 
-const {getJoke} = require("../controller/user.controller");
+import { getJoke } from "../controller/user.controller";
 
-const router = express.Router();
+const router = Router();
 
 router.get("/dadjoke", getJoke )
 
-module.exports = { userRouter: router };
+export const userRouter = router;

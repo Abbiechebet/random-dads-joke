@@ -1,11 +1,11 @@
-const express = require("express");
+import express, { json } from "express";
 
 const port = Number(process.env.PORT) || 4000;
-const { userRouter } = require("./src/route/user.router");
+import { userRouter } from "./src/route/user.router.js";
 
 const app = express();
 
-app.use(express.json());
+app.use(json());
 
 app.use("/api/v1", userRouter);
 

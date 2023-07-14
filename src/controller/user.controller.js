@@ -1,9 +1,8 @@
-const axios = require("axios");
-const { apiKey } = require("../apikey/apikey");
+import { get } from "axios";
+import { apiKey } from "../apikey/apikey";
 
 const getJoke = (req, res) => {
-  axios
-    .get("https://dad-jokes.p.rapidapi.com/random/joke", apiKey)
+  get("https://dad-jokes.p.rapidapi.com/random/joke", apiKey)
     .then((response) => {
       res.json(response.data.body[0]);
     })
@@ -12,4 +11,4 @@ const getJoke = (req, res) => {
     });
 };
 
-module.exports = { getJoke };
+export default { getJoke };
