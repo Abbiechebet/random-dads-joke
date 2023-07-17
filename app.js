@@ -1,13 +1,13 @@
-import express, { json } from "express";
+import express from "express";
 
 const port = Number(process.env.PORT) || 4000;
-import { userRouter } from "./src/route/user.router.js";
+import { router } from "./src/route/user.router.js";
 
 const app = express();
 
-app.use(json());
+app.use(express.json());
 
-app.use("/api/v1", userRouter);
+app.use("/api/v1/", router);
 
 app.use((err, req, res, next) => {
   return res.status(err.status || 500).json({

@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import { getJoke } from "../controller/user.controller";
+import getJoke from "../controller/user.controller.js";
 
 const router = Router();
 
-router.get("/dadjoke", getJoke )
+router.get("/dad/joke", getJoke);
 
-export const userRouter = router;
+export { router };

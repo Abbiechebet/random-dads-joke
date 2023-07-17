@@ -1,8 +1,8 @@
-import { get } from "axios";
-import { apiKey } from "../apikey/apikey";
+import axios from "axios";
+import apiKey from "../apikey/apikey.js";
 
 const getJoke = (req, res) => {
-  get("https://dad-jokes.p.rapidapi.com/random/joke", apiKey)
+  axios.get("https://dad-jokes.p.rapidapi.com/random/joke", apiKey) 
     .then((response) => {
       res.json(response.data.body[0]);
     })
@@ -10,5 +10,4 @@ const getJoke = (req, res) => {
       res.status(500).json(err);
     });
 };
-
-export default { getJoke };
+export default getJoke;
